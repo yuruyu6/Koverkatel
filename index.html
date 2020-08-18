@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Коверкатель</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#263238" />
+    <link rel="shortcut icon" href="/images/favicon512.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicon144.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/favicon114.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/favicon72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/favicon144.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1 class="mt-3">Коверкатель </h1><small>v. 1.0.0</small>
+        <hr>
+        <div class="input-group mb-3">
+            <input id="dataString" type="text" class="form-control" placeholder="Что нужно сковеркать?">
+
+            <div class="input-group-append">
+                <button onclick="doMainAction()" class="btn btn-primary" type="button"
+                    id="button-addon2">Сковеркать</button>
+            </div>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <div class="input-group-text" id="btnGroupAddon2">Количество:</div>
+            </div>
+            <input id="recordsNumber" type="text" class="form-control" aria-describedby="btnGroupAddon2" value="10">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button" onclick="changeRecords(1)">1</button>
+                <button class="btn btn-outline-secondary" type="button" onclick="changeRecords(10)">10</button>
+                <button class="btn btn-outline-secondary" type="button" onclick="changeRecords(30)">30</button>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-auto border-right">
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-success">
+                        <input type="radio" name="options" value="0.2"> Слабый режим
+                    </label>
+                    <label class="btn btn-warning">
+                        <input type="radio" name="options" value="0.5" checked> Умеренный режим
+                    </label>
+                    <label class="btn btn-danger">
+                        <input type="radio" name="options" value="0.9"> Агрессивный режим
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="col my-auto">
+                <div class="form-check ">
+                    <input type="checkbox" class="form-check-input" id="useLetterChanger" checked>
+                    <label class="form-check-label" for="useLetterChanger">Изменять буквы</label>
+                </div>
+            </div>
+
+            
+
+        </div>
+
+
+        <hr>
+        <textarea id="resultOutput" class="form-control" rows="10"></textarea>
+        <div class="form-group">
+            <button id="copyData" type="button" class="btn btn-secondary float-right mt-2" data-content="Скопировано!"
+                onclick="copy()" style="transition: max-width 2s cubic-bezier(0.23, 1, 0.32, 1);">Скопировать</button>
+        </div>
+
+
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+        crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.bundle.min.js"
+        integrity="sha384-DBjhmceckmzwrnMMrjI7BvG2FmRuxQVaTfFYHgfnrdfqMhxKt445b7j3KBQLolRl"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.esm.min.js"
+        integrity="sha384-sKZy8g2KJhBTFCD6cIg8d4EifJxaa8c/iYIERdeKorHWhAgZgQOfqOKMe3xBqye1"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
