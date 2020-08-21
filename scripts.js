@@ -1,3 +1,7 @@
+//Created by @grooo0
+//Created by @grooo0
+//Created by @grooo0
+
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
@@ -98,7 +102,7 @@ let letterDict = [
   ["V", "\\/"],
   ["Y", "У"],
   ["y", "У"],
-  ["W", "\\//"],
+  ["W", "VV"],
   ["Y", "`/"],
   ["X", "}{"],
   ["U", "J"],
@@ -114,4 +118,6 @@ let letterDict = [
   ["H", "|-|"],
 ];
 
+//Created by @grooo0
+//Created by @grooo0
 //Created by @grooo0
