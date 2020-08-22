@@ -6,7 +6,7 @@ function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 
-function changeRecords(value) {
+function getRecordsValue(value) {
   document.getElementById("recordsNumber").value = value;
 }
 
@@ -81,41 +81,42 @@ function copy() {
 let punctDict = [".", "-", "/"];
 
 let letterDict = [
-  ["A", "/\\"],
-  ["a", "@"],
+  ["A", "А"],
+  ["a", "а"],
   ["B", "8"],
   ["b", "ь"],
   ["D", "|)"],
   ["d", "cI"],
-  ["E", "[="],
-  ["e", "3"],
+  ["E", "I"],
+  ["e", "і"],
   ["F", "PH"],
   ["f", "ph"],
-  ["G", "6"],
-  ["P", "|>"],
+  ["G", "J"],
+  ["P", "Р"],
   ["Q", "O."],
-  ["S", "$"],
-  ["s", "$"],
-  ["v", "\\/"],
-  ["K", "|<"],
-  ["k", "|<"],
-  ["V", "\\/"],
+  ["S", "С"],
+  ["s", "с"],
+  ["v", "w"],
+  ["K", "Q"],
+  ["k", "q"],
+  ["V", "W"],
   ["Y", "У"],
   ["y", "У"],
   ["W", "VV"],
-  ["Y", "`/"],
-  ["X", "}{"],
+  ["w", "vv"],
+  ["Y", "U"],
+  ["X", "Х"],
   ["U", "J"],
   ["I", "l"],
   ["i", "l"],
   ["l", "I"],
   ["L", "|_"],
-  ["M", "|Y|"],
+  ["M", "М"],
   ["m", "nn"],
   ["N", "//"],
-  ["o", "()"],
-  ["O", "()"],
-  ["H", "|-|"],
+  ["o", "о"],
+  ["O", "О"],
+  ["H", "Н"],
 ];
 
 //Created by @grooo0
