@@ -52,16 +52,32 @@ function getRadioValue(theRadioGroup) {
 }
 
 function changeSymbol(symbolG) {
+  var selectedMethodIndex = document.getElementById("choose-method")
+    .selectedIndex;
   if (!isNaN(symbolG)) {
     return symbolG + getRandomPunct();
   } else {
-    for (let i = 0; i < letterDict.length; i++) {
-      if (letterDict[i][0] === symbolG) {
-        return letterDict[i][1];
-      }
+    switch (selectedMethodIndex) {
+      case 0:
+        return getChangedSymbolFromDict(letterDict0, symbolG);
+      case 1:
+        return getChangedSymbolFromDict(letterDict1, symbolG);
+      default:
+        console.log("The selected method is not available");
+        break;
     }
-    return symbolG;
+    getChangedSymbolFromDict(letterDict1, symbolG);
   }
+  return symbolG;
+}
+
+function getChangedSymbolFromDict(dict, symbol) {
+  for (let i = 0; i < dict.length; i++) {
+    if (dict[i][0] === symbol) {
+      return dict[i][1];
+    }
+  }
+  return symbol;
 }
 
 var getRandomPunct = () =>
@@ -78,9 +94,47 @@ function copy() {
   }, 1750);
 }
 
-let punctDict = [".", "-", "/"];
+let punctDict = ["-", "/"];
 
-let letterDict = [
+let letterDict0 = [
+  ["A", "/\\"],
+  ["a", "@"],
+  ["B", "8"],
+  ["b", "6"],
+  ["D", "|)"],
+  ["d", "cI"],
+  ["E", "[="],
+  ["e", "3"],
+  ["F", "PH"],
+  ["f", "ph"],
+  ["G", "6"],
+  ["P", "|>"],
+  ["Q", "O."],
+  ["S", "$"],
+  ["s", "$"],
+  ["v", "\\/"],
+  ["K", "|<"],
+  ["k", "|<"],
+  ["V", "\\/"],
+  ["Y", "РЈ"],
+  ["y", "РЈ"],
+  ["W", "VV"],
+  ["Y", "`/"],
+  ["X", "}{"],
+  ["U", "J"],
+  ["I", "l"],
+  ["i", "l"],
+  ["l", "I"],
+  ["L", "|_"],
+  ["M", "|Y|"],
+  ["m", "nn"],
+  ["N", "//"],
+  ["o", "()"],
+  ["O", "()"],
+  ["H", "|-|"],
+];
+
+let letterDict1 = [
   ["A", "А"],
   ["a", "а"],
   ["B", "8"],
@@ -101,7 +155,7 @@ let letterDict = [
   ["k", "q"],
   ["V", "W"],
   ["Y", "У"],
-  ["y", "У"],
+  ["y", "у"],
   ["W", "VV"],
   ["w", "vv"],
   ["Y", "U"],
