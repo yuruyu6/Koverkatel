@@ -57,26 +57,51 @@ function useTransliteration(str) {
   );
 }
 
-function doMainAction() {
-  let resultString = "";
-  createStringArray().forEach((element) => {
-    resultString += element + "\n";
-  });
-  document.getElementById("resultOutput").value = resultString;
+window.onload = function () {
+  handleButton("startProcess", "dataString", "resultOutput");
+  handleButton("startProcess", "dataStringReceiver", "resultOutputReceiver");
+  handleButton("startProcess", "dataStringPhoneNumber", "resultOutputPhoneNumber");
+  handleButton("startProcess", "dataStringAdress", "resultOutputAdress");
+  handleCopyButton("copyData", "resultOutput");
+  handleCopyButton("copyDataReceiver", "resultOutputReceiver");
+  handleCopyButton("copyDataPhoneNumber", "resultOutputPhoneNumber");
+  handleCopyButton("copyDataAdress", "resultOutputAdress");  
+};
+
+function handleButton(buttonId, dataStringId, resultOutputId) {
+  var inputElement = document.getElementById(buttonId);
+  if (inputElement)
+    inputElement.addEventListener("click", function () {
+      doMainAction(dataStringId, resultOutputId);
+    });
 }
 
-function createStringArray() {
+function doMainAction(dataStringId, resultOutputId) {
+  let resultString = "";
+  let dataString = document.getElementById(dataStringId);
+  if (dataString) dataString = dataString.value;
+  else return;
+  createStringArray(dataString).forEach((element) => {
+    resultString += element + "\n";
+  });
+  document.getElementById(resultOutputId).value = resultString;
+}
+
+function createStringArray(dataString) {
+  const defaultValue = 1;
   var selectedMode = getRadioValue("options");
-  let dataString = document.getElementById("dataString").value;
   var stringArray = [];
   var newString = "";
+  let recordsNumber = document.getElementById("recordsNumber")
+    ? document.getElementById("recordsNumber").value
+    : defaultValue;
   const cyrillicPattern = /[\u0400-\u04FF]/;
-  
+
   if (cyrillicPattern.test(dataString)) {
     dataString = useTransliteration(dataString);
   }
 
-  for (var i = 0; i < document.getElementById("recordsNumber").value; i++) {
+  for (var i = 0; i < recordsNumber; i++) {
     for (var j = 0; j < dataString.length; j++) {
       if (document.getElementById("useLetterChanger").checked) {
         if (Math.random() < selectedMode)
@@ -136,9 +161,16 @@ function getChangedSymbolFromDict(dict, symbol) {
 var getRandomPunct = () =>
   punctDict[Math.floor(Math.random() * punctDict.length)];
 
-function copy() {
-  let button = document.getElementById("copyData");
-  let textarea = document.getElementById("resultOutput");
+function handleCopyButton(buttonId, resultOutputId) {
+  var inputElement = document.getElementById(buttonId);
+  if (inputElement)
+    inputElement.addEventListener("click", function () {
+      copy(inputElement, resultOutputId);
+    });
+}
+
+function copy(button, resultOutputId) {
+  let textarea = document.getElementById(resultOutputId);
   textarea.select();
   document.execCommand("copy");
   button.textContent = "Скопировано!";
@@ -171,9 +203,10 @@ let letterDict0 = [
   ["V", "\\/"],
   ["Y", "Ј"],
   ["y", "j"],
+  ["q", "k"],
   ["W", "VV"],
-  ["Y", "`/"],
   ["X", "}{"],
+  ["x", "h"],
   ["U", "J"],
   ["I", "l"],
   ["i", "l"],
@@ -201,6 +234,7 @@ let letterDict1 = [
   ["G", "J"],
   ["P", "Р"],
   ["Q", "O."],
+  ["q", "k"],
   ["S", "С"],
   ["s", "с"],
   ["v", "w"],

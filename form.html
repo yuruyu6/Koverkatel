@@ -30,30 +30,21 @@
 
 <body>
     <div class="container">
-        <a href="/form.html" class="btn btn-dark float-right">Продвинутый режим</a>
-        <a class="custom-link" href="/">
+        <a href="/" class="btn btn-dark float-right">Обычный режим</a>
+        <a class="custom-link" href="/form.html">
             <h1 class="mt-3">Коверкатель</h1>
         </a><small>v. 1.1.0</small>
-
         <hr>
 
         <div class="input-group mb-3">
-            <input id="dataString" type="text" class="form-control" placeholder="Что нужно сковеркать?">
+            <input id="dataStringReceiver" type="text" class="form-control" placeholder="Получатель">
+            <input id="dataStringPhoneNumber" type="text" class="form-control" placeholder="Номер мобильного">
+        </div>
+        <div class="input-group mb-3">
+            <input id="dataStringAdress" type="text" class="form-control" placeholder="Адрес">
 
             <div class="input-group-append">
                 <button id="startProcess" class="btn btn-primary" type="button">Сковеркать</button>
-            </div>
-        </div>
-
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <div class="input-group-text">Количество:</div>
-            </div>
-            <input id="recordsNumber" type="text" class="form-control" value="10">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" onclick="changeRecords(1)">1</button>
-                <button class="btn btn-outline-secondary" type="button" onclick="changeRecords(10)">10</button>
-                <button class="btn btn-outline-secondary" type="button" onclick="changeRecords(30)">30</button>
             </div>
         </div>
 
@@ -92,12 +83,28 @@
         </div>
         <hr>
 
-        <textarea id="resultOutput" class="form-control" rows="10"></textarea>
         <div class="row">
             <div class="col">
-                <div class="form-group mt-2">
-                    <button id="copyData" type="button" class="btn btn-secondary float-right "
-                        data-content="Скопировано!">Скопировать</button>
+                <div class="input-group mb-3">
+                    <input id="resultOutputReceiver" type="text" class="form-control" placeholder="Получатель">
+                    <div class="input-group-append">
+                        <button id="copyDataReceiver" type="button" class="btn btn-secondary float-right"
+                            data-content="Скопировано!">Скопировать</button>
+                    </div>
+
+                    <input id="resultOutputPhoneNumber" type="text" class="form-control" placeholder="Номер мобильного">
+                    <div class="input-group-append">
+                        <button id="copyDataPhoneNumber" type="button" class="btn btn-secondary float-right"
+                            data-content="Скопировано!">Скопировать</button>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
+                    <input id="resultOutputAdress" type="text" class="form-control" placeholder="Адрес">
+
+                    <div class="input-group-append">
+                        <button id="copyDataAdress" type="button" class="btn btn-secondary float-right"
+                            data-content="Скопировано!">Скопировать</button>
+                    </div>
                 </div>
             </div>
         </div>
