@@ -1,7 +1,6 @@
 //Created by @grooo0
 //Created by @grooo0
 //Created by @grooo0
-
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
@@ -60,12 +59,16 @@ function useTransliteration(str) {
 window.onload = function () {
   handleButton("startProcess", "dataString", "resultOutput");
   handleButton("startProcess", "dataStringReceiver", "resultOutputReceiver");
-  handleButton("startProcess", "dataStringPhoneNumber", "resultOutputPhoneNumber");
+  handleButton(
+    "startProcess",
+    "dataStringPhoneNumber",
+    "resultOutputPhoneNumber"
+  );
   handleButton("startProcess", "dataStringAdress", "resultOutputAdress");
   handleCopyButton("copyData", "resultOutput");
   handleCopyButton("copyDataReceiver", "resultOutputReceiver");
   handleCopyButton("copyDataPhoneNumber", "resultOutputPhoneNumber");
-  handleCopyButton("copyDataAdress", "resultOutputAdress");  
+  handleCopyButton("copyDataAdress", "resultOutputAdress");
 };
 
 function handleButton(buttonId, dataStringId, resultOutputId) {
