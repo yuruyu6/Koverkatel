@@ -22,7 +22,7 @@
   ],
   "start_url": "/",
   "background_color": "#263238",
-  "display": "fullscreen",
+  "display": "standalone",
   "scope": "/",
   "theme_color": "#263238",
   "shortcuts": [],
