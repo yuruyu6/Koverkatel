@@ -20,10 +20,10 @@
           "purpose": "any maskable"
       }
   ],
-  "start_url": "/",
+  "start_url": "/Koverkatel/",
   "background_color": "#263238",
   "display": "standalone",
-  "scope": "/",
+  "scope": "/Koverkatel/",
   "theme_color": "#263238",
   "shortcuts": [],
   "url": "https://yuruyu6.github.io/Koverkatel/",
