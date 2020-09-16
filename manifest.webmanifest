@@ -4,17 +4,17 @@
   "description": "Коверкатель - незаменимый сервис при покупках на AliExpress",
   "icons": [
       {
-          "src": "/images/favicon144.png",
+          "src": "/Koverkatel/images/favicon144.png",
           "type": "image/png",
           "sizes": "144x144"
       },
       {
-          "src": "/images/favicon512.png",
+          "src": "/Koverkatel/images/favicon512.png",
           "type": "image/png",
           "sizes": "512x512"
       },
       {
-          "src": "/images/maskable_icon.png",
+          "src": "/Koverkatel/images/maskable_icon.png",
           "sizes": "602x602",
           "type": "image/png",
           "purpose": "any maskable"
@@ -26,7 +26,7 @@
   "scope": "/",
   "theme_color": "#263238",
   "shortcuts": [],
-  "url": "https://kovr.tk",
+  "url": "https://yuruyu6.github.io/Koverkatel/",
   "lang": "Russian",
   "screenshots": [],
   "orientation": "portrait"
